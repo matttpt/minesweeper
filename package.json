@@ -1,0 +1,28 @@
+{
+  "name": "minesweeper",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-react": "^7.18.6",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "clean-css-cli": "^5.6.1",
+    "eslint": "^8.20.0",
+    "eslint-plugin-react": "^7.30.1",
+    "rollup": "^2.77.2",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "scripts": {
+    "build": "mkdir -p build && npm run build-css && npm run build-html && npm run build-js && npm run build-svg",
+    "build-css": "cp css/main.css css/minesweeper.css build/ && cleancss --batch --batch-suffix '' build/*.css",
+    "build-html": "cp html/index.html build/",
+    "build-js": "npx rollup --config rollup.config.js",
+    "build-svg": "cp svg/flag.svg svg/mine.svg build/",
+    "lint": "npx eslint src --ext js,jsx"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

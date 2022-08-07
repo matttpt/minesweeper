@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+#minesweeper {
+  margin-bottom: 1rem;
+}
+
+#minesweeper form .form-grid {
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: max-content max-content auto;
+  margin-bottom: 1rem;
+}
+
+#minesweeper form .form-grid label {
+  text-align: right;
+}
+
+#minesweeper form .form-grid input[type=number] {
+  width: 4rem;
+}
+
+#minesweeper form .form-buttons {
+  text-align: right;
+}
+
+#minesweeper .game-bar {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 0.5rem;
+  justify-content: space-between;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  position: sticky;
+  top: 1rem;
+}
+
+#minesweeper .game-grid {
+  display: grid;
+  gap: 3px;
+}
+
+#minesweeper .game-grid-scroller {
+  border: 5px solid black;
+  box-sizing: border-box;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+#minesweeper .game-grid.in-progress {
+  background: #f0f0f0;
+}
+
+#minesweeper .game-grid.won {
+  background: #cfc;
+}
+
+#minesweeper .game-grid.lost {
+  background: #fdd;
+}
+
+#minesweeper .cell {
+  align-items: center;
+  aspect-ratio: 1;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  user-select: none;
+}
+
+#minesweeper .cell img {
+  height: auto;
+  max-width: 100%;
+}
+
+#minesweeper .game-grid.in-progress .cell {
+  cursor: pointer;
+}
+
+#minesweeper .game-grid.in-progress .cell.neighbors-0 {
+  cursor: auto;
+}
+
+#minesweeper .game-grid.in-progress .cell.covered {
+  background: #ccc;
+}
+
+#minesweeper .game-grid.in-progress .cell.covered:hover {
+  background: #d8d8d8;
+}
+
+#minesweeper .game-grid.in-progress .cell.uncovered {
+  background: #e0e0e0;
+}
+
+#minesweeper .game-grid.won .cell.covered {
+  background: #00e600;
+}
+
+#minesweeper .game-grid.won .cell.uncovered {
+  background: #7f7;
+}
+
+#minesweeper .game-grid.lost .cell.covered {
+  background: #f66;
+}
+
+#minesweeper .game-grid.lost .cell.uncovered {
+  background: #ffb3b3;
+}
+
+#minesweeper .cell.neighbors-1 {
+  fill: blue;
+}
+
+#minesweeper .cell.neighbors-2 {
+  fill: green;
+}
+
+#minesweeper .cell.neighbors-3 {
+  fill: red;
+}
+
+#minesweeper .cell.neighbors-4 {
+  fill: darkblue;
+}
+
+#minesweeper .cell.neighbors-5 {
+  fill: brown;
+}
+
+#minesweeper .cell.neighbors-6 {
+  fill: cyan;
+}
+
+#minesweeper .cell.neighbors-7 {
+  fill: black;
+}
+
+#minesweeper .cell.neighbors-8 {
+  fill: #888;
+}
